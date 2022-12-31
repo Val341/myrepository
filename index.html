@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1120, initial-scale=1.0"/>
+<title> - Lotto - </title>
+	<script language="javascript">
+	function Lotto() {
+		
+		var min = 1;
+		var max = 45;
+		var randomNum1 = Math.round(Math.random() * (max - min + 1)) + min;
+		var randomNum2 = Math.round(Math.random() * (max - min + 1)) + min;
+		var randomNum3 = Math.round(Math.random() * (max - min + 1)) + min;
+		var randomNum4 = Math.round(Math.random() * (max - min + 1)) + min;
+		var randomNum5 = Math.round(Math.random() * (max - min + 1)) + min;
+		var randomNum6 = Math.round(Math.random() * (max - min + 1)) + min;
+
+        while(randomNum1 == randomNum2 || randomNum1 == randomNum3 || randomNum1 == randomNum4 || randomNum1 == randomNum5 || randomNum1 == randomNum6){
+            randomNum1 = Math.round(Math.random() * (max - min + 1)) + min;
+        }
+
+        while(randomNum2 == randomNum1 || randomNum2 == randomNum3 || randomNum2 == randomNum4 || randomNum2 == randomNum5 || randomNum2 == randomNum6){
+            randomNum2 = Math.round(Math.random() * (max - min + 1)) + min;
+        }
+
+        while(randomNum3 == randomNum1 || randomNum3 == randomNum2 || randomNum3 == randomNum4 || randomNum3 == randomNum5 || randomNum3 == randomNum6){
+            randomNum3 = Math.round(Math.random() * (max - min + 1)) + min;
+        }
+
+        while(randomNum4 == randomNum1 || randomNum4 == randomNum2 || randomNum4 == randomNum3 || randomNum4 == randomNum5 || randomNum4 == randomNum6){
+            randomNum4 = Math.round(Math.random() * (max - min + 1)) + min;
+        }
+
+        while(randomNum5 == randomNum1 || randomNum5 == randomNum2 || randomNum5 == randomNum3 || randomNum5 == randomNum4 || randomNum5 == randomNum6){
+            randomNum5 = Math.round(Math.random() * (max - min + 1)) + min;
+        }
+
+        while(randomNum6 == randomNum1 || randomNum6 == randomNum2 || randomNum6 == randomNum3 || randomNum6 == randomNum4 || randomNum6 == randomNum5){
+            randomNum6 = Math.round(Math.random() * (max - min + 1)) + min;
+        }
+        			
+        var tippedNumber1 = Number(document.getElementById("number1").value);
+        var tippedNumber2 = Number(document.getElementById("number2").value);
+        var tippedNumber3 = Number(document.getElementById("number3").value);
+        var tippedNumber4 = Number(document.getElementById("number4").value);
+		var tippedNumber5 = Number(document.getElementById("number5").value);
+		var tippedNumber6 = Number(document.getElementById("number6").value);
+
+        if(tippedNumber1 >= 45){
+            alert("Erste Zahl zu groß!");
+            validationNumbers = Boolean(false);
+            play = Boolean(false);
+        }
+        if(tippedNumber2 >= 45){
+            alert("Zweite Zahl zu groß!");
+            validationNumbers = Boolean(false);
+            play = Boolean(false);
+        }
+        if(tippedNumber3 >= 45){
+            alert("Dritte Zahl zu groß!");
+            validationNumbers = Boolean(false);
+            play = Boolean(false);
+        }
+        if(tippedNumber4 >= 45){
+            alert("Vierte Zahl zu groß!");
+            validationNumbers = Boolean(false);
+            play = Boolean(false);
+        }
+        if(tippedNumber5 >= 45){
+            alert("Fünfte Zahl zu groß!");
+            validationNumbers = Boolean(false);
+            play = Boolean(false);
+        }
+        if(tippedNumber6 >= 45){
+            alert("Sechste Zahl zu groß!");
+            validationNumbers = Boolean(false);
+            play = Boolean(false);
+        }
+        else{
+            validationNumbers = Boolean(true);
+        }
+
+        if(validationNumbers == true){
+
+        
+		
+        if(tippedNumber1 == tippedNumber2 || tippedNumber1 == tippedNumber3 || tippedNumber1 == tippedNumber4 || tippedNumber1 == tippedNumber5 || tippedNumber1 == tippedNumber6){
+            alert("Bitte ändern Sie die Erste Zahl!");
+            play = Boolean(false);
+        }
+
+        if(tippedNumber2 == tippedNumber1 || tippedNumber2 == tippedNumber3 || tippedNumber2 == tippedNumber4 || tippedNumber2 == tippedNumber5 || tippedNumber2 == tippedNumber6){
+            alert("Bitte ändern Sie die Zweite Zahl!");
+            play = Boolean(false);
+        }
+
+        if(tippedNumber3 == tippedNumber1 || tippedNumber3 == tippedNumber2 || tippedNumber3 == tippedNumber4 || tippedNumber3 == tippedNumber5 || tippedNumber3 == tippedNumber6){
+            alert("Bitte ändern Sie die Dritte Zahl!");
+            play = Boolean(false);
+        }
+
+        if(tippedNumber4== tippedNumber1 || tippedNumber4 == tippedNumber2 || tippedNumber4 == tippedNumber3 || tippedNumber4 == tippedNumber5 || tippedNumber4 == tippedNumber6){
+            alert("Bitte ändern Sie die Vierte Zahl!");
+            play = Boolean(false);
+        }
+
+        if(tippedNumber5 == tippedNumber1 || tippedNumber5 == tippedNumber2 || tippedNumber5 == tippedNumber3 || tippedNumber5 == tippedNumber4 || tippedNumber5 == tippedNumber6){
+            alert("Bitte ändern Sie die Fünfte Zahl!");
+            play = Boolean(false);
+        }
+
+        if(tippedNumber6 == tippedNumber1 || tippedNumber6 == tippedNumber2 || tippedNumber6 == tippedNumber3 || tippedNumber6 == tippedNumber4 || tippedNumber6 == tippedNumber5){
+            alert("Bitte ändern Sie die Sechste Zahl!");
+            play = Boolean(false);
+        }
+
+        else{
+            play = Boolean(true);
+        }
+        
+        if(play == true){
+		var rightTipps = 0;
+		
+		if(Boolean(tippedNumber1 == randomNum1 || tippedNumber1 == randomNum2 || tippedNumber1 == randomNum3 || tippedNumber1 == randomNum4 || tippedNumber1 == randomNum5 || tippedNumber1 == randomNum6)){
+			document.getElementById("number01Tipp").innerHTML = "Tipp 1 (" + tippedNumber1 + ")  ist richtig getippt";
+			rightTipps++;
+		}
+        else{
+            document.getElementById("number01Tipp").innerHTML = "Tipp 1 (" + tippedNumber1 + ")  ist falsch getippt";
+        }
+		
+		if(Boolean(tippedNumber2 == randomNum1 || tippedNumber2 == randomNum2 || tippedNumber2 == randomNum3 || tippedNumber2 == randomNum4 || tippedNumber2 == randomNum5 || tippedNumber2 == randomNum6)){
+			document.getElementById("number02Tipp").innerHTML = "Tipp 2 (" + tippedNumber2 + ")  ist richtig getippt";
+			rightTipps++;
+		}
+        else{
+            document.getElementById("number02Tipp").innerHTML = "Tipp 2 (" + tippedNumber2 + ")  ist falsch getippt";
+        }
+		
+		if(Boolean(tippedNumber3 == randomNum1 || tippedNumber3 == randomNum2 || tippedNumber3 == randomNum3 || tippedNumber3 == randomNum4 || tippedNumber3 == randomNum5 || tippedNumber3 == randomNum6)){
+			document.getElementById("number03Tipp").innerHTML = "Tipp 3 (" + tippedNumber3 + ")  ist richtig getippt";
+			rightTipps++;
+		}
+        else{
+            document.getElementById("number03Tipp").innerHTML = "Tipp 3 (" + tippedNumber3 + ")  ist falsch getippt";
+        }
+		
+		if(Boolean(tippedNumber4 == randomNum1 || tippedNumber4 == randomNum2 || tippedNumber4 == randomNum3 || tippedNumber4 == randomNum4 || tippedNumber4 == randomNum5 || tippedNumber4 == randomNum6)){
+			document.getElementById("number04Tipp").innerHTML = "Tipp 4 (" + tippedNumber4 + ")  ist richtig getippt";
+			rightTipps++;
+		}
+        else{
+            document.getElementById("number04Tipp").innerHTML = "Tipp 4 (" + tippedNumber4 + ")  ist falsch getippt";
+        }
+		
+		if(Boolean(tippedNumber5 == randomNum1 || tippedNumber5 == randomNum2 || tippedNumber5 == randomNum3 || tippedNumber5 == randomNum4 || tippedNumber5 == randomNum5 || tippedNumber5 == randomNum6)){
+			document.getElementById("number05Tipp").innerHTML = "Tipp 5 (" + tippedNumber5 + ")  ist richtig getippt";
+			rightTipps++;
+		}
+        else{
+            document.getElementById("number05Tipp").innerHTML = "Tipp 5 (" + tippedNumber5 + ")  ist falsch getippt";
+        }
+		
+		if(Boolean(tippedNumber6 == randomNum1 || tippedNumber6 == randomNum2 || tippedNumber6 == randomNum3 || tippedNumber6 == randomNum4 || tippedNumber6 == randomNum5 || tippedNumber6 == randomNum6)){
+			document.getElementById("number06Tipp").innerHTML = "Tipp 6 (" + tippedNumber6 + ") ist richtig getippt";
+			rightTipps++;
+		}
+        else{
+            document.getElementById("number06Tipp").innerHTML = "Tipp 6 (" + tippedNumber6 + ") ist falsch getippt";
+        }
+		
+		document.getElementById("value").innerHTML = "Sie haben " + rightTipps + " Zahlen richtig getippt!";
+
+        document.getElementById("lottoZiehung").innerHTML = "Die gezogenen Zahlen waren: " + randomNum1 + ", " + randomNum2 + ", " + randomNum3 + ", " + randomNum4+ ", " + randomNum5 + ", " + randomNum6;
+        }
+    }
+
+        document.getElementById("renew").innerHTML = "Um erneut zu spielen drücken sie bitte folgenden Button um den Inhalt zu leeren";
+    }	
+	
+	
+	</script>
+	<style>
+	
+        html{
+            zoom: 110%;
+        }
+
+		h1,h3,p{
+			font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+		}
+
+        .tipp{
+            color: green;
+        }
+
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            font-size: medium;
+        }
+
+	</style>
+</head>
+
+<body>
+    <div>
+	<h1>Lotto 6 aus 45</h1>
+    </div>
+    <div>
+       <select id="operations">
+		   <option value="null">Anrede Auswählen</option>
+	       <option value="frau">Frau</option>
+           <option value="herr">Herr</option>
+	   </select>
+	
+	
+	<input type="text" id="first_name" placeholder="Vorname">
+	<input type="text" id="family_name" placeholder="Nachname">
+	<input type="email" id="mail" placeholder="E-Mail Adresse eingeben">
+    </div>
+    <div>
+	<h3>Zahlen auswählen:</h3>
+	
+
+	
+	<form>
+		<input id="number1" type="number" min="0" max="45">
+		<input id="number2" type="number" min="1" max="45">
+		<input id="number3" type="number" min="1" max="45">
+		<input id="number4" type="number" min="1" max="45">
+		<input id="number5" type="number" min="1" max="45">
+		<input id="number6" type="number" min="1" max="45">
+	</form>
+	
+    <p id="doppelteZahl"></p>
+	
+	<input type="submit" value="Play" onclick="Lotto()">
+    </div>
+	
+    
+    <div><p class="tipp" id="number01Tipp"></p></div>
+	<div><p class="tipp" id="number02Tipp"></p></div>
+	<div><p class="tipp" id="number03Tipp"></p></div>
+	<div><p class="tipp" id="number04Tipp"></p></div>
+	<div><p class="tipp" id="number05Tipp"></p></div>
+	<div><p class="tipp" id="number06Tipp"></p></div>
+	<div><p class="tipp" id="falseTipp"></p></div>
+	
+	<div><h3 class="tipp" id="value"></h3></div>
+
+    <div><p class="zahlenZiehung" id="lottoZiehung"></p></div>
+
+    <div>
+    <p id="renew"></p>
+    </div>
+    <div><button onClick="window.location.reload();">Inhalt leeren</button></div>
+	</body>
+</html>
